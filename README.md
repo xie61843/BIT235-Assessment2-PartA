@@ -155,9 +155,10 @@ and upload it to the “Assessment 2 – Part #1” box on Moodle.
 
 If the GitHub option is used, the repository URL is:
 
-```
-<insert your GitHub repository URL here>
-```
+<https://github.com/xie61843/BIT235-Assessment2-PartA>
+
+The repository is public and contains the same commit history that produced
+this submission zip.
 
 ---
 
