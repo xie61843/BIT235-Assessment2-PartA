@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  BIT235 Assessment 2 - Part A: Wiki Administrator Login
+  Student: Xinle Xie - S1580929
+  View: error.html - rendered for failed authentication and for any
+  unhandled HTTP error raised by the application.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wiki - Error</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<main class="page">
+    <div class="message-card">
+        <!-- Failed logins show a login-specific heading; system errors show a generic one. -->
+        <h1 class="page-title"
+            th:text="${#strings.isEmpty(errorMessage) ? 'Something went wrong' : 'Login unsuccessful'}">
+            Login unsuccessful
+        </h1>
+
+        <!-- The controller supplies errorMessage; Spring's error attributes
+             supply status and message for system-level failures. -->
+        <p class="error" th:with="fallback='An unexpected error occurred. Please try again.'"
+           th:text="${#strings.isEmpty(errorMessage) ? (#strings.isEmpty(message) ? fallback : message) : errorMessage}">
+            Invalid username or password.
+        </p>
+
+        <p class="error-code" th:if="${status}" th:text="${'Error code: ' + status}">Error code: 500</p>
+
+        <!-- A single recovery action keeps the error page usable. -->
+        <a class="back-link" th:href="@{/login}">Return to the login page</a>
+    </div>
+</main>
+</body>
+</html>

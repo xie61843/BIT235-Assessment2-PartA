@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  BIT235 Assessment 2 - Part A: Wiki Administrator Login
+  Student: Xinle Xie - S1580929
+  View: login.html - the login screen presented to the web client.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wiki Administrator Login</title>
+    <!-- Shared stylesheet; the only visual dependency of the application. -->
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<main class="page">
+    <h1 class="page-title">Wiki Administrator Login</h1>
+
+    <!-- A friendly message is shown after a deliberate logout. -->
+    <p class="info" th:if="${infoMessage}" th:text="${infoMessage}">You have been logged out.</p>
+
+    <!-- The form posts the two fields to the controller's @PostMapping("/login"). -->
+    <form class="login-card" th:action="@{/login}" th:object="${loginForm}" method="post">
+
+        <label class="field-label" for="username">Username</label>
+        <!-- th:field binds the input to LoginForm.username and keeps the typed value on error. -->
+        <input class="field-input" id="username" type="text"
+               th:field="*{username}" autocomplete="username" autofocus>
+
+        <label class="field-label" for="password">Password</label>
+        <input class="field-input" id="password" type="password"
+               th:field="*{password}" autocomplete="current-password">
+
+        <!-- Submit button sends the completed form to the server. -->
+        <button class="login-button" type="submit">Login</button>
+    </form>
+
+    <p class="hint">Sign in with the wiki administrator account to continue.</p>
+</main>
+</body>
+</html>

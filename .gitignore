@@ -1,0 +1,18 @@
+# BIT235 Assessment 2 - Part A: Wiki Administrator Login
+# Student: Xinle Xie - S1580929
+# Build output, IDE metadata and OS files are excluded from version control.
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+.idea/
+*.iws
+*.iml
+*.ipr
+
+.vscode/
+
+.DS_Store
+Thumbs.db

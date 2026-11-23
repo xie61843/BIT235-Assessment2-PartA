@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+  BIT235 Assessment 2 - Part A: Wiki Administrator Login
+  Student: Xinle Xie - S1580929
+  View: welcome.html - the success page shown after valid credentials.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<main class="page">
+    <div class="message-card">
+        <h1 class="page-title">Welcome, <span th:text="${displayName}">Xinle</span>!</h1>
+
+        <!-- Confirms that authentication succeeded and points to the next stage. -->
+        <p class="success">You are signed in as the wiki administrator.</p>
+        <p class="hint">In Part B this page becomes the entry point to category and article management.</p>
+
+        <!-- Ends the demo session by returning to the login screen. -->
+        <a class="back-link" th:href="@{/logout}">Log out</a>
+    </div>
+</main>
+</body>
+</html>

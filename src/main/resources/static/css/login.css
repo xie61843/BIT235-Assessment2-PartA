@@ -1,0 +1,122 @@
+/*
+ * BIT235 Assessment 2 - Part A: Wiki Administrator Login
+ * Student: Xinle Xie - S1580929
+ *
+ * Stylesheet for the login, welcome and error pages. It recreates the
+ * layout of the assignment mock-up: a bordered card, grey inputs and a
+ * blue Login button, using no external front-end framework.
+ */
+
+/* Page shell: centres the card and sets the base typeface. */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f4f7;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    color: #1f2933;
+}
+
+.page {
+    width: 100%;
+    max-width: 420px;
+    padding: 24px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 20px;
+}
+
+/* Login card mirrors the bordered box in the brief. */
+.login-card {
+    background: #ffffff;
+    border: 2px solid #1f2933;
+    padding: 28px 24px 24px;
+    text-align: left;
+}
+
+.field-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.field-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #9aa5b1;
+    background: #d9dde3;
+    font-size: 1rem;
+}
+
+/* Highlight the active field so keyboard users can see the focus position. */
+.field-input:focus {
+    outline: 2px solid #2f6fed;
+    background: #ffffff;
+}
+
+.login-button {
+    display: block;
+    margin: 4px auto 0;
+    padding: 8px 28px;
+    border: 1px solid #1f4fa8;
+    background: #2f6fed;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #1f4fa8;
+}
+
+.info {
+    color: #1f4fa8;
+    margin-bottom: 16px;
+}
+
+.hint {
+    margin-top: 18px;
+    font-size: 0.9rem;
+    color: #52606d;
+}
+
+/* Shared card used by the welcome and error pages. */
+.message-card {
+    background: #ffffff;
+    border: 1px solid #cbd2d9;
+    padding: 32px 24px;
+}
+
+.success {
+    color: #0b6b3a;
+    font-weight: 600;
+}
+
+.error {
+    color: #a61b1b;
+    font-weight: 600;
+}
+
+.error-code {
+    color: #52606d;
+    font-size: 0.85rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: #2f6fed;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
